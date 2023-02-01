@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Mapa</h1>
+  <iframe 
+    width="500" 
+    height="500" 
+    frameborder="0" 
+    scrolling="no" 
+    marginheight="0" 
+    marginwidth="0"
+    src=""
+    style="border: 1px solid black">
+  </iframe>
+  <script>
+    const iframe = document.querySelector('iframe');
+    function posicionar(lat, lon, precision) {
+      iframe.src = `https://www.openstreetmap.org/export/embed.html?bbox=${lon-precision},${lat-precision},${lon+precision},${lat+precision}&layer=mapnik`
+    }
+
+    posicionar(28.0198981,-16.6438673, 1);
+  </script>
+</body>
+
+</html>
